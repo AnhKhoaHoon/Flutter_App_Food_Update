@@ -1,5 +1,6 @@
 import 'package:demo/common/custom_appbar.dart';
 import 'package:demo/common/custom_container.dart';
+import 'package:demo/common/heading.dart';
 import 'package:demo/constants/constants.dart';
 import 'package:demo/views/home/widgets/category_list.dart';
 import 'package:flutter/material.dart';
@@ -17,7 +18,20 @@ class HomePage extends StatelessWidget {
       body: SafeArea(
         child: CustomContainer(
             containerContent: Column(
-          children: [CategoryList()],
+          children: [
+            const CategoryList(),
+          Heading(text: "Nearby Restaurants",
+          onTap:(){},
+          ),
+
+           Heading(text: "Try Something New",
+          onTap:(){},
+          ),
+
+           Heading(text: "Food closer to you",
+          onTap:(){},
+          ),
+          ],
         )),
       ),
     );
