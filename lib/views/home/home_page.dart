@@ -1,4 +1,6 @@
 import 'package:demo/views/home/all_nearby_restaurants.dart';
+import 'package:demo/views/home/widgets/food_list.dart';
+import 'package:demo/views/home/widgets/nearby_restaurants_list.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:demo/common/custom_appbar.dart';
@@ -32,6 +34,7 @@ class HomePage extends StatelessWidget {
                     duration: const Duration(milliseconds: 900));
               },
             ),
+            const NearbyRestaurants(), 
             Heading(
               text: "Try Something New",
               onTap: () {
@@ -40,6 +43,7 @@ class HomePage extends StatelessWidget {
                     duration: const Duration(milliseconds: 900));
               },
             ),
+            const FoodsList(),
             Heading(
               text: "Food closer to you",
               onTap: () {
@@ -48,6 +52,7 @@ class HomePage extends StatelessWidget {
                     duration: const Duration(milliseconds: 900));
               },
             ),
+            const FoodsList(),
           ],
         )),
       ),
