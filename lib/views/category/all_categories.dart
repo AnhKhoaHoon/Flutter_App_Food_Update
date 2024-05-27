@@ -1,4 +1,5 @@
 import 'package:demo/common/app_style.dart';
+import 'package:demo/common/back_ground_container.dart';
 import 'package:demo/common/reusable_text.dart';
 import 'package:demo/constants/constants.dart';
 import 'package:demo/constants/uidata.dart';
@@ -19,30 +20,33 @@ class AllCategories extends StatelessWidget {
         title: ReusableText(text:"All Categories",
         style:appStyle(12, kGray, FontWeight.w600)),
       ),
-      body: Container(
-        padding: EdgeInsets.only(left:12.w, top:10.h),
-        height: hieght,
-        child: ListView(
-        scrollDirection: Axis.vertical,
-        children: List.generate(categories.length, (i) {
-          var category = categories[i];
-          return ListTile(
-            leading:CircleAvatar(
-              radius: 18.r,
-              backgroundColor: kGrayLight,
-              child:Image.network(category["imageUrl"], fit: BoxFit.contain,),
-            ),
-            title: ReusableText(text:category['title'],
-            style: appStyle(12, kGray, FontWeight.normal)),
-            trailing: Icon(
-              Icons.arrow_forward_ios_rounded,
-              color: kGray,
-              size: 15.r,
-            ),
-          );
-        }),
-      ),
-        
+      body: BackGroundContainer(
+        color: Colors.white,
+        child: Container(
+          padding: EdgeInsets.only(left:12.w, top:10.h),
+          height: hieght,
+          child: ListView(
+          scrollDirection: Axis.vertical,
+          children: List.generate(categories.length, (i) {
+            var category = categories[i];
+            return ListTile(
+              leading:CircleAvatar(
+                radius: 18.r,
+                backgroundColor: kGrayLight,
+                child:Image.network(category["imageUrl"], fit: BoxFit.contain,),
+              ),
+              title: ReusableText(text:category['title'],
+              style: appStyle(12, kGray, FontWeight.normal)),
+              trailing: Icon(
+                Icons.arrow_forward_ios_rounded,
+                color: kGray,
+                size: 15.r,
+              ),
+            );
+          }),
+        ),
+          
+        ),
       ),
     );
   }
