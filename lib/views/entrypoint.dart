@@ -11,21 +11,15 @@ import 'package:get/get.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 
 class MainScreen extends StatelessWidget {
-   MainScreen({super.key});
-List<Widget> pageList =[
-  HomePage(),
-  SearchPage(),
-   CartPage(),
-  ProfilePage()
- 
-];
+  MainScreen({super.key});
+  List<Widget> pageList = [HomePage(), SearchPage(), CartPage(), ProfilePage()];
   @override
   Widget build(BuildContext context) {
     final controller = Get.put(TabIndexController());
     return Obx(() => Scaffold(
           body: Stack(
             children: [
-             pageList[controller.tabIndex],
+              pageList[controller.tabIndex],
               Align(
                 alignment: Alignment.bottomCenter,
                 child: Theme(
